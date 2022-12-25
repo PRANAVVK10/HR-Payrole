@@ -2,6 +2,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
 import Chart from "react-apexcharts";
+import { useNavigation } from "react-router-dom";
 
 const AVATAR1 = "assets/media/avatars/300-11.jpg";
 const Logo = "assets/media/logos/demo7.svg";
@@ -10,6 +11,8 @@ export const Dashboard = () => {
   const [newMember, SetNewMember] = useState(false);
   const [task, setTask] = useState(false);
   const [Product, setProduct] = useState(false);
+
+  const navigate = useNavigation();
 
   const NewMemberHandler = () => {
     SetNewMember(true);
@@ -95,7 +98,12 @@ export const Dashboard = () => {
                           Home
                         </a>
                       </li>
-                      <li className="breadcrumb-item text-muted">Dashboards</li>
+                      <li
+                        className="breadcrumb-item text-muted"
+                        onClick={() => navigate("/")}
+                      >
+                        Dashboards
+                      </li>
                       <li className="breadcrumb-item text-dark">Default</li>
                     </ul>
                   </div>
