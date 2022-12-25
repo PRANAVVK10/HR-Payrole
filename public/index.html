@@ -1,4 +1,4 @@
-<html lang="en">
+<!doctype html>
 
 <head>
 	<meta charset="utf-8" />
@@ -7,20 +7,7 @@
 	<meta name="theme-color" content="#000000" />
 	<meta name="description" content="Web site created using create-react-app" />
 	<link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-	<!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
 	<link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-	<!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
 	<!-- start metat tags -->
 	<title>Metronic - the world's #1 selling Bootstrap Admin Theme Ecosystem for HTML, Vue, React, Angular & Laravel by
 		Keenthemes</title>
@@ -29,7 +16,6 @@
 		content="The most advanced Bootstrap Admin Theme on Themeforest trusted by 100,000 beginners and professionals. Multi-demo, Dark Mode, RTL support and complete React, Angular, Vue, Asp.Net Core, Blazor, Django, Flask & Laravel versions. Grab your copy now and get life-time updates for free." />
 	<meta name="keywords"
 		content="metronic, bootstrap, bootstrap 5, angular, VueJs, React, Asp.Net Core, Blazor, Django, Flask & Laravel starter kits, admin themes, web design, figma, web development, free templates, free admin themes, bootstrap theme, bootstrap template, bootstrap dashboard, bootstrap dak mode, bootstrap button, bootstrap datepicker, bootstrap timepicker, fullcalendar, datatables, flaticon" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta property="og:locale" content="en_US" />
 	<meta property="og:type" content="article" />
 	<meta property="og:title"
@@ -56,21 +42,8 @@
 	class="header-fixed header-tablet-and-mobile-fixed aside-fixed aside-secondary-enabled">
 	<noscript>You need to enable JavaScript to run this app.</noscript>
 	<div id="root"></div>
-	<!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
 	<!-- <script>var hostUrl = "assets/";</script> -->
 	<!--begin::Global Javascript Bundle(used by all pages)-->
-	<script src="assets/plugins/global/plugins.bundle.js"></script>
-	<script src="assets/js/scripts.bundle.js"></script>
-	<!--end::Global Javascript Bundle-->
 	<!--begin::Vendors Javascript(used by this page)-->
 	<script src="assets/plugins/custom/fullcalendar/fullcalendar.bundle.js"></script>
 	<script src="https://cdn.amcharts.com/lib/5/index.js"></script>
@@ -84,12 +57,17 @@
 	<script src="https://cdn.amcharts.com/lib/5/geodata/usaLow.js"></script>
 	<script src="https://cdn.amcharts.com/lib/5/geodata/worldTimeZonesLow.js"></script>
 	<script src="https://cdn.amcharts.com/lib/5/geodata/worldTimeZoneAreasLow.js"></script>
+
+	<script src="assets/plugins/global/plugins.bundle.js"></script>
+	<script src="assets/js/scripts.bundle.js"></script>
+	<!--end::Global Javascript Bundle-->
 	<script src="assets/plugins/custom/datatables/datatables.bundle.js"></script>
 	<script src="assets/js/custom/apps/projects/project/project.js"></script>
 	<!--end::Vendors Javascript-->
 	<!--begin::Custom Javascript(used by this page)-->
 	<script src="assets/js/widgets.bundle.js"></script>
 	<script src="assets/js/custom/widgets.js"></script>
+	<script src="assets/js/custom/account/security/"></script>
 	<script src="assets/js/custom/apps/chat/chat.js"></script>
 	<script src="assets/js/custom/utilities/modals/upgrade-plan.js"></script>
 	<script src="assets/js/custom/utilities/modals/create-app.js"></script>
