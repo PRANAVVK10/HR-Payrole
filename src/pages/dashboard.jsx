@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
+import Chart from "react-apexcharts";
 
 const AVATAR1 = "assets/media/avatars/300-11.jpg";
 const Logo = "assets/media/logos/demo7.svg";
@@ -33,6 +34,32 @@ export const Dashboard = () => {
   const productCloseHandler = () => {
     setProduct(false);
   };
+
+  const options = {
+    chart: {
+      height: 350,
+      type: "area",
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    stroke: {
+      curve: "smooth",
+    },
+    xaxis: {
+      type: "column",
+      categories: ["Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug"],
+    },
+    tooltip: {
+      x: {
+        format: "dd/MM/yy HH:mm",
+      },
+    },
+  };
+  const series = [
+    { name: "Incomplete", data: [70, 70, 80, 80, 75, 75, 75] },
+    { name: "Complete", data: [55, 55, 60, 60, 55, 55, 60] },
+  ];
 
   return (
     <section>
@@ -1337,620 +1364,18 @@ export const Dashboard = () => {
                             className="card-rounded-bottom"
                             style={{ height: 300, minHeight: 315 }}
                           >
-                            <div
+                            <Chart
+                              options={options}
+                              series={series}
+                              type="area"
+                              height={300}
+                            />
+                            {/* <div
                               id="apexchartsirbzhr9f"
                               className="apexcharts-canvas apexchartsirbzhr9f apexcharts-theme-light"
                               style={{ width: 454, height: 300 }}
                             >
-                              {/* <svg
-              id="SvgjsSvg1092"
-              width={454}
-              height={300}
-              xmlns="http://www.w3.org/2000/svg"
-              version="1.1"
-              xmlnsXlink="http://www.w3.org/1999/xlink"
-              xmlns:svgjs="http://svgjs.dev"
-              className="apexcharts-svg apexcharts-zoomable"
-              xmlns:data="ApexChartsNS"
-              transform="translate(0, 0)"
-              style={{ background: "transparent" }}
-            >
-              <g
-                id="SvgjsG1094"
-                className="apexcharts-inner apexcharts-graphical"
-                transform="translate(42.397705078125, 30)"
-              >
-                <defs id="SvgjsDefs1093">
-                  <clipPath id="gridRectMaskirbzhr9f">
-                    <rect
-                      id="SvgjsRect1098"
-                      width="396.40229511260986"
-                      height="233.40640030860902"
-                      x="-3.5"
-                      y="-1.5"
-                      rx={0}
-                      ry={0}
-                      opacity={1}
-                      strokeWidth={0}
-                      stroke="none"
-                      strokeDasharray={0}
-                      fill="#fff"
-                    />
-                  </clipPath>
-                  <clipPath id="forecastMaskirbzhr9f" />
-                  <clipPath id="nonForecastMaskirbzhr9f" />
-                  <clipPath id="gridRectMarkerMaskirbzhr9f">
-                    <rect
-                      id="SvgjsRect1099"
-                      width="393.40229511260986"
-                      height="234.40640030860902"
-                      x={-2}
-                      y={-2}
-                      rx={0}
-                      ry={0}
-                      opacity={1}
-                      strokeWidth={0}
-                      stroke="none"
-                      strokeDasharray={0}
-                      fill="#fff"
-                    />
-                  </clipPath>
-                </defs>
-                <g
-                  id="SvgjsG1111"
-                  className="apexcharts-xaxis"
-                  transform="translate(0, 0)"
-                >
-                  <g
-                    id="SvgjsG1112"
-                    className="apexcharts-xaxis-texts-g"
-                    transform="translate(0, -4)"
-                  >
-                    <text
-                      id="SvgjsText1114"
-                      fontFamily="Helvetica, Arial, sans-serif"
-                      x={0}
-                      y="259.406400308609"
-                      textAnchor="middle"
-                      dominantBaseline="auto"
-                      fontSize="12px"
-                      fontWeight={400}
-                      fill="#a1a5b7"
-                      className="apexcharts-text apexcharts-xaxis-label "
-                      style={{ fontFamily: "Helvetica, Arial, sans-serif" }}
-                    >
-                      <tspan id="SvgjsTspan1115">Feb</tspan>
-                      <title>Feb</title>
-                    </text>
-                    <text
-                      id="SvgjsText1117"
-                      fontFamily="Helvetica, Arial, sans-serif"
-                      x="64.90038251876831"
-                      y="259.406400308609"
-                      textAnchor="middle"
-                      dominantBaseline="auto"
-                      fontSize="12px"
-                      fontWeight={400}
-                      fill="#a1a5b7"
-                      className="apexcharts-text apexcharts-xaxis-label "
-                      style={{ fontFamily: "Helvetica, Arial, sans-serif" }}
-                    >
-                      <tspan id="SvgjsTspan1118">Mar</tspan>
-                      <title>Mar</title>
-                    </text>
-                    <text
-                      id="SvgjsText1120"
-                      fontFamily="Helvetica, Arial, sans-serif"
-                      x="129.80076503753662"
-                      y="259.406400308609"
-                      textAnchor="middle"
-                      dominantBaseline="auto"
-                      fontSize="12px"
-                      fontWeight={400}
-                      fill="#a1a5b7"
-                      className="apexcharts-text apexcharts-xaxis-label "
-                      style={{ fontFamily: "Helvetica, Arial, sans-serif" }}
-                    >
-                      <tspan id="SvgjsTspan1121">Apr</tspan>
-                      <title>Apr</title>
-                    </text>
-                    <text
-                      id="SvgjsText1123"
-                      fontFamily="Helvetica, Arial, sans-serif"
-                      x="194.70114755630493"
-                      y="259.406400308609"
-                      textAnchor="middle"
-                      dominantBaseline="auto"
-                      fontSize="12px"
-                      fontWeight={400}
-                      fill="#a1a5b7"
-                      className="apexcharts-text apexcharts-xaxis-label "
-                      style={{ fontFamily: "Helvetica, Arial, sans-serif" }}
-                    >
-                      <tspan id="SvgjsTspan1124">May</tspan>
-                      <title>May</title>
-                    </text>
-                    <text
-                      id="SvgjsText1126"
-                      fontFamily="Helvetica, Arial, sans-serif"
-                      x="259.60153007507324"
-                      y="259.406400308609"
-                      textAnchor="middle"
-                      dominantBaseline="auto"
-                      fontSize="12px"
-                      fontWeight={400}
-                      fill="#a1a5b7"
-                      className="apexcharts-text apexcharts-xaxis-label "
-                      style={{ fontFamily: "Helvetica, Arial, sans-serif" }}
-                    >
-                      <tspan id="SvgjsTspan1127">Jun</tspan>
-                      <title>Jun</title>
-                    </text>
-                    <text
-                      id="SvgjsText1129"
-                      fontFamily="Helvetica, Arial, sans-serif"
-                      x="324.50191259384155"
-                      y="259.406400308609"
-                      textAnchor="middle"
-                      dominantBaseline="auto"
-                      fontSize="12px"
-                      fontWeight={400}
-                      fill="#a1a5b7"
-                      className="apexcharts-text apexcharts-xaxis-label "
-                      style={{ fontFamily: "Helvetica, Arial, sans-serif" }}
-                    >
-                      <tspan id="SvgjsTspan1130">Jul</tspan>
-                      <title>Jul</title>
-                    </text>
-                    <text
-                      id="SvgjsText1132"
-                      fontFamily="Helvetica, Arial, sans-serif"
-                      x="389.40229511260986"
-                      y="259.406400308609"
-                      textAnchor="middle"
-                      dominantBaseline="auto"
-                      fontSize="12px"
-                      fontWeight={400}
-                      fill="#a1a5b7"
-                      className="apexcharts-text apexcharts-xaxis-label "
-                      style={{ fontFamily: "Helvetica, Arial, sans-serif" }}
-                    >
-                      <tspan id="SvgjsTspan1133">Aug</tspan>
-                      <title>Aug</title>
-                    </text>
-                  </g>
-                </g>
-                <g id="SvgjsG1154" className="apexcharts-grid">
-                  <g
-                    id="SvgjsG1155"
-                    className="apexcharts-gridlines-horizontal"
-                  >
-                    <line
-                      id="SvgjsLine1157"
-                      x1={0}
-                      y1={0}
-                      x2="389.40229511260986"
-                      y2={0}
-                      stroke="#eff2f5"
-                      strokeDasharray={4}
-                      strokeLinecap="butt"
-                      className="apexcharts-gridline"
-                    />
-                    <line
-                      id="SvgjsLine1158"
-                      x1={0}
-                      y1="46.081280061721806"
-                      x2="389.40229511260986"
-                      y2="46.081280061721806"
-                      stroke="#eff2f5"
-                      strokeDasharray={4}
-                      strokeLinecap="butt"
-                      className="apexcharts-gridline"
-                    />
-                    <line
-                      id="SvgjsLine1159"
-                      x1={0}
-                      y1="92.16256012344361"
-                      x2="389.40229511260986"
-                      y2="92.16256012344361"
-                      stroke="#eff2f5"
-                      strokeDasharray={4}
-                      strokeLinecap="butt"
-                      className="apexcharts-gridline"
-                    />
-                    <line
-                      id="SvgjsLine1160"
-                      x1={0}
-                      y1="138.24384018516542"
-                      x2="389.40229511260986"
-                      y2="138.24384018516542"
-                      stroke="#eff2f5"
-                      strokeDasharray={4}
-                      strokeLinecap="butt"
-                      className="apexcharts-gridline"
-                    />
-                    <line
-                      id="SvgjsLine1161"
-                      x1={0}
-                      y1="184.32512024688722"
-                      x2="389.40229511260986"
-                      y2="184.32512024688722"
-                      stroke="#eff2f5"
-                      strokeDasharray={4}
-                      strokeLinecap="butt"
-                      className="apexcharts-gridline"
-                    />
-                    <line
-                      id="SvgjsLine1162"
-                      x1={0}
-                      y1="230.40640030860902"
-                      x2="389.40229511260986"
-                      y2="230.40640030860902"
-                      stroke="#eff2f5"
-                      strokeDasharray={4}
-                      strokeLinecap="butt"
-                      className="apexcharts-gridline"
-                    />
-                  </g>
-                  <g
-                    id="SvgjsG1156"
-                    className="apexcharts-gridlines-vertical"
-                  />
-                  <line
-                    id="SvgjsLine1164"
-                    x1={0}
-                    y1="230.40640030860902"
-                    x2="389.40229511260986"
-                    y2="230.40640030860902"
-                    stroke="transparent"
-                    strokeDasharray={0}
-                    strokeLinecap="butt"
-                  />
-                  <line
-                    id="SvgjsLine1163"
-                    x1={0}
-                    y1={1}
-                    x2={0}
-                    y2="230.40640030860902"
-                    stroke="transparent"
-                    strokeDasharray={0}
-                    strokeLinecap="butt"
-                  />
-                </g>
-                <g
-                  id="SvgjsG1100"
-                  className="apexcharts-area-series apexcharts-plot-series"
-                >
-                  <g
-                    id="SvgjsG1101"
-                    className="apexcharts-series"
-                    seriesname="Incomplete"
-                    data:longestseries="true"
-                    rel={1}
-                    data:realindex={0}
-                  >
-                    <path
-                      id="SvgjsPath1104"
-                      d="M 0 230.40640030860902L 0 92.16256012344365C 22.715133881568907 92.16256012344365 42.18524863719941 92.16256012344365 64.90038251876831 92.16256012344365C 87.61551640033721 92.16256012344365 107.08563115596772 26.33216003526968 129.80076503753662 26.33216003526968C 152.51589891910552 26.33216003526968 171.98601367473603 26.33216003526968 194.70114755630493 26.33216003526968C 217.41628143787383 26.33216003526968 236.88639619350434 59.24736007935667 259.60153007507324 59.24736007935667C 282.3166639566422 59.24736007935667 301.7867787122726 59.24736007935667 324.50191259384155 59.24736007935667C 347.2170464754105 59.24736007935667 366.68716123104093 59.24736007935667 389.40229511260986 59.24736007935667C 389.40229511260986 59.24736007935667 389.40229511260986 59.24736007935667 389.40229511260986 230.40640030860902M 389.40229511260986 59.24736007935667z"
-                      fill="rgba(220,253,253,1)"
-                      fillOpacity={1}
-                      strokeOpacity={1}
-                      strokeLinecap="butt"
-                      strokeWidth={0}
-                      strokeDasharray={0}
-                      className="apexcharts-area"
-                      index={0}
-                      clipPath="url(#gridRectMaskirbzhr9f)"
-                      pathto="M 0 230.40640030860902L 0 92.16256012344365C 22.715133881568907 92.16256012344365 42.18524863719941 92.16256012344365 64.90038251876831 92.16256012344365C 87.61551640033721 92.16256012344365 107.08563115596772 26.33216003526968 129.80076503753662 26.33216003526968C 152.51589891910552 26.33216003526968 171.98601367473603 26.33216003526968 194.70114755630493 26.33216003526968C 217.41628143787383 26.33216003526968 236.88639619350434 59.24736007935667 259.60153007507324 59.24736007935667C 282.3166639566422 59.24736007935667 301.7867787122726 59.24736007935667 324.50191259384155 59.24736007935667C 347.2170464754105 59.24736007935667 366.68716123104093 59.24736007935667 389.40229511260986 59.24736007935667C 389.40229511260986 59.24736007935667 389.40229511260986 59.24736007935667 389.40229511260986 230.40640030860902M 389.40229511260986 59.24736007935667z"
-                      pathfrom="M -1 552.9753607406617L -1 552.9753607406617L 64.90038251876831 552.9753607406617L 129.80076503753662 552.9753607406617L 194.70114755630493 552.9753607406617L 259.60153007507324 552.9753607406617L 324.50191259384155 552.9753607406617L 389.40229511260986 552.9753607406617"
-                    />
-                    <path
-                      id="SvgjsPath1105"
-                      d="M 0 92.16256012344365C 22.715133881568907 92.16256012344365 42.18524863719941 92.16256012344365 64.90038251876831 92.16256012344365C 87.61551640033721 92.16256012344365 107.08563115596772 26.33216003526968 129.80076503753662 26.33216003526968C 152.51589891910552 26.33216003526968 171.98601367473603 26.33216003526968 194.70114755630493 26.33216003526968C 217.41628143787383 26.33216003526968 236.88639619350434 59.24736007935667 259.60153007507324 59.24736007935667C 282.3166639566422 59.24736007935667 301.7867787122726 59.24736007935667 324.50191259384155 59.24736007935667C 347.2170464754105 59.24736007935667 366.68716123104093 59.24736007935667 389.40229511260986 59.24736007935667"
-                      fill="none"
-                      fillOpacity={1}
-                      stroke="#04c8c8"
-                      strokeOpacity={1}
-                      strokeLinecap="butt"
-                      strokeWidth={3}
-                      strokeDasharray={0}
-                      className="apexcharts-area"
-                      index={0}
-                      clipPath="url(#gridRectMaskirbzhr9f)"
-                      pathto="M 0 92.16256012344365C 22.715133881568907 92.16256012344365 42.18524863719941 92.16256012344365 64.90038251876831 92.16256012344365C 87.61551640033721 92.16256012344365 107.08563115596772 26.33216003526968 129.80076503753662 26.33216003526968C 152.51589891910552 26.33216003526968 171.98601367473603 26.33216003526968 194.70114755630493 26.33216003526968C 217.41628143787383 26.33216003526968 236.88639619350434 59.24736007935667 259.60153007507324 59.24736007935667C 282.3166639566422 59.24736007935667 301.7867787122726 59.24736007935667 324.50191259384155 59.24736007935667C 347.2170464754105 59.24736007935667 366.68716123104093 59.24736007935667 389.40229511260986 59.24736007935667"
-                      pathfrom="M -1 552.9753607406617L -1 552.9753607406617L 64.90038251876831 552.9753607406617L 129.80076503753662 552.9753607406617L 194.70114755630493 552.9753607406617L 259.60153007507324 552.9753607406617L 324.50191259384155 552.9753607406617L 389.40229511260986 552.9753607406617"
-                    />
-                    <g
-                      id="SvgjsG1102"
-                      className="apexcharts-series-markers-wrap"
-                      data:realindex={0}
-                    >
-                      <g className="apexcharts-series-markers">
-                        <circle
-                          id="SvgjsCircle1172"
-                          r={0}
-                          cx={0}
-                          cy={0}
-                          className="apexcharts-marker wnk2xw2xy no-pointer-events"
-                          stroke="#04c8c8"
-                          fill="#dcfdfd"
-                          fillOpacity={1}
-                          strokeWidth={3}
-                          strokeOpacity="0.9"
-                          default-marker-size={0}
-                        />
-                      </g>
-                    </g>
-                  </g>
-                  <g
-                    id="SvgjsG1106"
-                    className="apexcharts-series"
-                    seriesname="Complete"
-                    data:longestseries="true"
-                    rel={2}
-                    data:realindex={1}
-                  >
-                    <path
-                      id="SvgjsPath1109"
-                      d="M 0 230.40640030860902L 0 190.90816025570467C 22.715133881568907 190.90816025570467 42.18524863719941 190.90816025570467 64.90038251876831 190.90816025570467C 87.61551640033721 190.90816025570467 107.08563115596772 157.99296021161769 129.80076503753662 157.99296021161769C 152.51589891910552 157.99296021161769 171.98601367473603 157.99296021161769 194.70114755630493 157.99296021161769C 217.41628143787383 157.99296021161769 236.88639619350434 190.90816025570467 259.60153007507324 190.90816025570467C 282.3166639566422 190.90816025570467 301.7867787122726 190.90816025570467 324.50191259384155 190.90816025570467C 347.2170464754105 190.90816025570467 366.68716123104093 157.99296021161769 389.40229511260986 157.99296021161769C 389.40229511260986 157.99296021161769 389.40229511260986 157.99296021161769 389.40229511260986 230.40640030860902M 389.40229511260986 157.99296021161769z"
-                      fill="rgba(241,250,255,1)"
-                      fillOpacity={1}
-                      strokeOpacity={1}
-                      strokeLinecap="butt"
-                      strokeWidth={0}
-                      strokeDasharray={0}
-                      className="apexcharts-area"
-                      index={1}
-                      clipPath="url(#gridRectMaskirbzhr9f)"
-                      pathto="M 0 230.40640030860902L 0 190.90816025570467C 22.715133881568907 190.90816025570467 42.18524863719941 190.90816025570467 64.90038251876831 190.90816025570467C 87.61551640033721 190.90816025570467 107.08563115596772 157.99296021161769 129.80076503753662 157.99296021161769C 152.51589891910552 157.99296021161769 171.98601367473603 157.99296021161769 194.70114755630493 157.99296021161769C 217.41628143787383 157.99296021161769 236.88639619350434 190.90816025570467 259.60153007507324 190.90816025570467C 282.3166639566422 190.90816025570467 301.7867787122726 190.90816025570467 324.50191259384155 190.90816025570467C 347.2170464754105 190.90816025570467 366.68716123104093 157.99296021161769 389.40229511260986 157.99296021161769C 389.40229511260986 157.99296021161769 389.40229511260986 157.99296021161769 389.40229511260986 230.40640030860902M 389.40229511260986 157.99296021161769z"
-                      pathfrom="M -1 552.9753607406617L -1 552.9753607406617L 64.90038251876831 552.9753607406617L 129.80076503753662 552.9753607406617L 194.70114755630493 552.9753607406617L 259.60153007507324 552.9753607406617L 324.50191259384155 552.9753607406617L 389.40229511260986 552.9753607406617"
-                    />
-                    <path
-                      id="SvgjsPath1110"
-                      d="M 0 190.90816025570467C 22.715133881568907 190.90816025570467 42.18524863719941 190.90816025570467 64.90038251876831 190.90816025570467C 87.61551640033721 190.90816025570467 107.08563115596772 157.99296021161769 129.80076503753662 157.99296021161769C 152.51589891910552 157.99296021161769 171.98601367473603 157.99296021161769 194.70114755630493 157.99296021161769C 217.41628143787383 157.99296021161769 236.88639619350434 190.90816025570467 259.60153007507324 190.90816025570467C 282.3166639566422 190.90816025570467 301.7867787122726 190.90816025570467 324.50191259384155 190.90816025570467C 347.2170464754105 190.90816025570467 366.68716123104093 157.99296021161769 389.40229511260986 157.99296021161769"
-                      fill="none"
-                      fillOpacity={1}
-                      stroke="#009ef7"
-                      strokeOpacity={1}
-                      strokeLinecap="butt"
-                      strokeWidth={3}
-                      strokeDasharray={0}
-                      className="apexcharts-area"
-                      index={1}
-                      clipPath="url(#gridRectMaskirbzhr9f)"
-                      pathto="M 0 190.90816025570467C 22.715133881568907 190.90816025570467 42.18524863719941 190.90816025570467 64.90038251876831 190.90816025570467C 87.61551640033721 190.90816025570467 107.08563115596772 157.99296021161769 129.80076503753662 157.99296021161769C 152.51589891910552 157.99296021161769 171.98601367473603 157.99296021161769 194.70114755630493 157.99296021161769C 217.41628143787383 157.99296021161769 236.88639619350434 190.90816025570467 259.60153007507324 190.90816025570467C 282.3166639566422 190.90816025570467 301.7867787122726 190.90816025570467 324.50191259384155 190.90816025570467C 347.2170464754105 190.90816025570467 366.68716123104093 157.99296021161769 389.40229511260986 157.99296021161769"
-                      pathfrom="M -1 552.9753607406617L -1 552.9753607406617L 64.90038251876831 552.9753607406617L 129.80076503753662 552.9753607406617L 194.70114755630493 552.9753607406617L 259.60153007507324 552.9753607406617L 324.50191259384155 552.9753607406617L 389.40229511260986 552.9753607406617"
-                    />
-                    <g
-                      id="SvgjsG1107"
-                      className="apexcharts-series-markers-wrap"
-                      data:realindex={1}
-                    >
-                      <g className="apexcharts-series-markers">
-                        <circle
-                          id="SvgjsCircle1173"
-                          r={0}
-                          cx={0}
-                          cy={0}
-                          className="apexcharts-marker wzpyba2owk no-pointer-events"
-                          stroke="#009ef7"
-                          fill="#f1faff"
-                          fillOpacity={1}
-                          strokeWidth={3}
-                          strokeOpacity="0.9"
-                          default-marker-size={0}
-                        />
-                      </g>
-                    </g>
-                  </g>
-                  <g
-                    id="SvgjsG1103"
-                    className="apexcharts-datalabels"
-                    data:realindex={0}
-                  />
-                  <g
-                    id="SvgjsG1108"
-                    className="apexcharts-datalabels"
-                    data:realindex={1}
-                  />
-                </g>
-                <line
-                  id="SvgjsLine1166"
-                  x1={0}
-                  y1={0}
-                  x2={0}
-                  y2="230.40640030860902"
-                  stroke="#04c8c8"
-                  strokeDasharray={3}
-                  strokeLinecap="butt"
-                  className="apexcharts-xcrosshairs"
-                  x={0}
-                  y={0}
-                  width={1}
-                  height="230.40640030860902"
-                  fill="#b1b9c4"
-                  filter="none"
-                  fillOpacity="0.9"
-                  strokeWidth={1}
-                />
-                <line
-                  id="SvgjsLine1167"
-                  x1={0}
-                  y1={0}
-                  x2="389.40229511260986"
-                  y2={0}
-                  stroke="#b6b6b6"
-                  strokeDasharray={0}
-                  strokeWidth={1}
-                  strokeLinecap="butt"
-                  className="apexcharts-ycrosshairs"
-                />
-                <line
-                  id="SvgjsLine1168"
-                  x1={0}
-                  y1={0}
-                  x2="389.40229511260986"
-                  y2={0}
-                  strokeDasharray={0}
-                  strokeWidth={0}
-                  strokeLinecap="butt"
-                  className="apexcharts-ycrosshairs-hidden"
-                />
-                <g id="SvgjsG1169" className="apexcharts-yaxis-annotations" />
-                <g id="SvgjsG1170" className="apexcharts-xaxis-annotations" />
-                <g id="SvgjsG1171" className="apexcharts-point-annotations" />
-                <rect
-                  id="SvgjsRect1174"
-                  width={0}
-                  height={0}
-                  x={0}
-                  y={0}
-                  rx={0}
-                  ry={0}
-                  opacity={1}
-                  strokeWidth={0}
-                  stroke="none"
-                  strokeDasharray={0}
-                  fill="#fefefe"
-                  className="apexcharts-zoom-rect"
-                />
-                <rect
-                  id="SvgjsRect1175"
-                  width={0}
-                  height={0}
-                  x={0}
-                  y={0}
-                  rx={0}
-                  ry={0}
-                  opacity={1}
-                  strokeWidth={0}
-                  stroke="none"
-                  strokeDasharray={0}
-                  fill="#fefefe"
-                  className="apexcharts-selection-rect"
-                />
-              </g>
-              <g
-                id="SvgjsG1134"
-                className="apexcharts-yaxis"
-                rel={0}
-                transform="translate(12.397705078125, 0)"
-              >
-                <g id="SvgjsG1135" className="apexcharts-yaxis-texts-g">
-                  <text
-                    id="SvgjsText1137"
-                    fontFamily="Helvetica, Arial, sans-serif"
-                    x={20}
-                    y="31.5"
-                    textAnchor="end"
-                    dominantBaseline="auto"
-                    fontSize="12px"
-                    fontWeight={400}
-                    fill="#a1a5b7"
-                    className="apexcharts-text apexcharts-yaxis-label "
-                    style={{ fontFamily: "Helvetica, Arial, sans-serif" }}
-                  >
-                    <tspan id="SvgjsTspan1138">84</tspan>
-                    <title>84</title>
-                  </text>
-                  <text
-                    id="SvgjsText1140"
-                    fontFamily="Helvetica, Arial, sans-serif"
-                    x={20}
-                    y="77.5812800617218"
-                    textAnchor="end"
-                    dominantBaseline="auto"
-                    fontSize="12px"
-                    fontWeight={400}
-                    fill="#a1a5b7"
-                    className="apexcharts-text apexcharts-yaxis-label "
-                    style={{ fontFamily: "Helvetica, Arial, sans-serif" }}
-                  >
-                    <tspan id="SvgjsTspan1141">77</tspan>
-                    <title>77</title>
-                  </text>
-                  <text
-                    id="SvgjsText1143"
-                    fontFamily="Helvetica, Arial, sans-serif"
-                    x={20}
-                    y="123.6625601234436"
-                    textAnchor="end"
-                    dominantBaseline="auto"
-                    fontSize="12px"
-                    fontWeight={400}
-                    fill="#a1a5b7"
-                    className="apexcharts-text apexcharts-yaxis-label "
-                    style={{ fontFamily: "Helvetica, Arial, sans-serif" }}
-                  >
-                    <tspan id="SvgjsTspan1144">70</tspan>
-                    <title>70</title>
-                  </text>
-                  <text
-                    id="SvgjsText1146"
-                    fontFamily="Helvetica, Arial, sans-serif"
-                    x={20}
-                    y="169.7438401851654"
-                    textAnchor="end"
-                    dominantBaseline="auto"
-                    fontSize="12px"
-                    fontWeight={400}
-                    fill="#a1a5b7"
-                    className="apexcharts-text apexcharts-yaxis-label "
-                    style={{ fontFamily: "Helvetica, Arial, sans-serif" }}
-                  >
-                    <tspan id="SvgjsTspan1147">63</tspan>
-                    <title>63</title>
-                  </text>
-                  <text
-                    id="SvgjsText1149"
-                    fontFamily="Helvetica, Arial, sans-serif"
-                    x={20}
-                    y="215.8251202468872"
-                    textAnchor="end"
-                    dominantBaseline="auto"
-                    fontSize="12px"
-                    fontWeight={400}
-                    fill="#a1a5b7"
-                    className="apexcharts-text apexcharts-yaxis-label "
-                    style={{ fontFamily: "Helvetica, Arial, sans-serif" }}
-                  >
-                    <tspan id="SvgjsTspan1150">56</tspan>
-                    <title>56</title>
-                  </text>
-                  <text
-                    id="SvgjsText1152"
-                    fontFamily="Helvetica, Arial, sans-serif"
-                    x={20}
-                    y="261.906400308609"
-                    textAnchor="end"
-                    dominantBaseline="auto"
-                    fontSize="12px"
-                    fontWeight={400}
-                    fill="#a1a5b7"
-                    className="apexcharts-text apexcharts-yaxis-label "
-                    style={{ fontFamily: "Helvetica, Arial, sans-serif" }}
-                  >
-                    <tspan id="SvgjsTspan1153">49</tspan>
-                    <title>49</title>
-                  </text>
-                </g>
-              </g>
-              <rect
-                id="SvgjsRect1165"
-                width={0}
-                height={0}
-                x={0}
-                y={0}
-                rx={0}
-                ry={0}
-                opacity={1}
-                strokeWidth={0}
-                stroke="none"
-                strokeDasharray={0}
-                fill="#fefefe"
-              />
-              <g id="SvgjsG1095" className="apexcharts-annotations" />
-            </svg> */}
+                              
                               <div
                                 className="apexcharts-legend"
                                 style={{ maxHeight: 150 }}
@@ -2040,7 +1465,7 @@ export const Dashboard = () => {
                               <div className="apexcharts-yaxistooltip apexcharts-yaxistooltip-0 apexcharts-yaxistooltip-left apexcharts-theme-light">
                                 <div className="apexcharts-yaxistooltip-text" />
                               </div>
-                            </div>
+                            </div> */}
                           </div>
                           {/*end::Chart*/}
                         </div>
