@@ -1,25 +1,40 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Dashboard from './components/dashboard/index';
+import Login from './components/login/index';
+import Calendar from './components/calendar/index';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Layout from './components/layout';
+import Project from './project';
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <section>
+
+      {/* <div className="App"> */}
+        <BrowserRouter>
+          <Routes>
+            {/* <Route element={<Layout />}> */}
+              <Route path="/" element={<Dashboard />} />
+              {/* <Route index element={<Dashboard />} /> */}
+              <Route path="/login" element={<Login />} />
+              <Route path="/calendar" element={<Calendar />} />
+              <Route path="/Project" element={<Project />} />
+
+              {/* <Route path="/newmember" element={<NewMember />} /> */}
+              {/* <Route path="contact" element={<Contact />} />
+          <Route path="*" element={<NoPage />} /> */}
+            {/* </Route> */}
+          </Routes>
+        </BrowserRouter>
+
+
+      {/* </div> */}
+    </section>
+
   );
+
 }
 
 export default App;
