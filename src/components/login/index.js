@@ -1,17 +1,12 @@
 import React from "react";
 
+import background from '../../assets/media/stock/1600x800/img-1.jpg';
+
 function Login() {
     return(
-        <div>
-            <div className="d-flex flex-column flex-root">
-  {/*begin::Page bg image*/}
-  <style
-    dangerouslySetInnerHTML={{
-      __html:
-        "body { background-image: url('assets/media/auth/bg4.jpg'); } [data-theme=\"dark\"] body { background-image: url('assets/media/auth/bg4-dark.jpg'); }"
-    }}
-  />
-  {/*end::Page bg image*/}
+  <div style={{background:background}}>
+      <div className="d-flex flex-column flex-root">
+
   {/*begin::Authentication - Sign-in */}
   <div className="d-flex flex-column flex-column-fluid flex-lg-row">
     {/*begin::Aside*/}
@@ -20,7 +15,8 @@ function Login() {
       <div className="d-flex flex-center flex-lg-start flex-column">
         {/*begin::Logo*/}
         <a href="#" className="mb-7">
-          <img alt="Logo" src="assets/media/logos/custom-3.svg" />
+          {/* <img alt="Logo" src="assets/media/logos/custom-3.svg" /> */}
+          <h1 style={{fontSize:'40px',color:'white'}}>LEADCCIO</h1>
         </a>
         {/*end::Logo*/}
         {/*begin::Title*/}
@@ -48,13 +44,14 @@ function Login() {
           >
             {/*begin::Heading*/}
             <div className="text-center mb-11">
+              
               {/*begin::Title*/}
-              <h1 className="text-dark fw-bolder mb-3">Sign In</h1>
+              <h1 className="text-dark fw-bolder mb-3">Sign Into LEADCCIO</h1>
               {/*end::Title*/}
               {/*begin::Subtitle*/}
-              <div className="text-gray-500 fw-semibold fs-6">
+              {/* <div className="text-gray-500 fw-semibold fs-6">
                 Your Social Campaigns
-              </div>
+              </div> */}
               {/*end::Subtitle=*/}
             </div>
             {/*begin::Heading*/}

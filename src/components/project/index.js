@@ -416,7 +416,7 @@ function Project () {
 
  {/* header */}
 
-        <div className="tab-content m-5">
+        <div className="tab-content container-xxl">
         {/*begin::Tab pane*/}
         <div
           id="kt_project_targets_card_pane"

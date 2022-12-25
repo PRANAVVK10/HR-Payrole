@@ -5,7 +5,8 @@ import Login from './components/login/index';
 import Calendar from './components/calendar/index';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Layout from './components/layout';
-import Project from './project';
+import Project from './components/project/index';
+import ExternalSite from './components/externalSite';
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/calendar" element={<Calendar />} />
               <Route path="/Project" element={<Project />} />
+              <Route path="/externalSite" element={<ExternalSite />} />
 
               {/* <Route path="/newmember" element={<NewMember />} /> */}
               {/* <Route path="contact" element={<Contact />} />
